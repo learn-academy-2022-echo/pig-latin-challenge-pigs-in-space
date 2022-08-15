@@ -33,7 +33,21 @@ const App = () => {
 
       // ACTION ITEM: your Pig Latin logic goes here!
 
-    
+      if(vowelsArray.includes(eachWord[0])) {
+        return eachWord + "way"
+      } else if(eachWord.includes("qu")) {
+        var first = eachWord.slice(0, eachWord.search("qu") + 2)
+        var second = eachWord.slice(eachWord.search("qu") + 2, eachWord.length)
+        return second + first + "ay"
+      } else if(eachWord.includes("y") && vowelsArray.length === 0) {
+        var chunkOne = eachWord.slice(0, eachWord.search("y"))
+        var chunkTwo = eachWord.slice(eachWord.search("y"), eachWord.length)
+        return chunkTwo + chunkOne + "ay"
+       } //else if(!(vowelsArray.includes(eachWord[0]))) {
+      //   var one = eachWord.slice(0,eachWord.search(vowelsArray[0]))
+      //   var two = eachWord.slice(eachWord.search(vowelsArray[0]), eachWord.length)
+      //   return two + one + "ay"
+      // }
 
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
       return eachWord
