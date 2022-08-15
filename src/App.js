@@ -32,7 +32,31 @@ const App = () => {
       console.log("vowelsArray:", vowelsArray)
 
       // ACTION ITEM: your Pig Latin logic goes here!
+// PsuedoCode: Build out a function that will take an array and return a new array with augmentation done on each of the elements. Using a .map higher order fuction. For each iteration, we want a conditional check to see if words begin with a vowel. (a value stored in the vowelsArray) Use .includes to identify. Output will be a string. 
+// For the output, we'll use .concat to add the string "way" to the end.
+//
+const testArray = ["apple"]
 
+
+const translator = (translatedWords, vowelsArray) => {
+        translatedWords.map((value) => {
+          if (vowelsArray.indexOf(translatedWords[0])>-1) {
+            var newWord = value.concat("way")
+          } 
+          return newWord
+        }) 
+      }
+        console.log(translator(testArray, vowelsArray))
+
+        // const userStory1 = () => {
+        //   for (i=0; i < arrayOfUserInput.length; i++) {
+        //     let newArray = []
+        //     newArray.push(array[i])
+        //     if(array[i])
+        //   }
+
+        // }   
+    
     
 
       // ACTION ITEM: this return will be the output of your Pig Latin'd code
