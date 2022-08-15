@@ -18,6 +18,7 @@ const App = () => {
     // NO MODIFICATION NEEDED: now that we have an array of words, we can map over the array and look at each word
     const translatedWordsArray = arrayOfUserInput.map(eachWord => {
       console.log("eachWord:", eachWord)
+    
 
       // NO MODIFICATION NEEDED: this code will look at each word and identify the vowels
       const vowelsArray = eachWord.split("").filter(vowel => {
@@ -33,41 +34,16 @@ const App = () => {
 
 
       // ACTION ITEM: your Pig Latin logic goes here!
-// intended to use arrayOfUserInput as the arguement
-        const userStory1 = (array) => {
-// activation of fucntion the array userStory1 will reset the array
-          let finishedUserStory1 = []
-// looping through all the elements in the input array
-          for (let i = 0; i < array.length; i++) {
-// resets the newArray into a blank one every iteration
-            let newArray = []
-// pushing the inputted array into newArray
-          newArray.push(array[i])
-// turns the array into a string
-          // newArray.join()
-// conditional tree 
-// newarray is turned into a string and checking if the first index is a vowel, if there is a vowel adds a -way as a suffix and pushes it into a new array called finishedUserStory1
-          if (newArray.join().charAt(0) === "a") {
-            finishedUserStory1.push(newArray.join() + "way")
-          } else if (newArray.join().charAt(0) === "e") {
-            finishedUserStory1.push(newArray.join() + "way")
-          } else if (newArray.join().charAt(0) === "i") {
-            finishedUserStory1.push(newArray.join() + "way")
-          } else if (newArray.join().charAt(0) === "o") {
-            finishedUserStory1.push(newArray.join() + "way")
-          } else if (newArray.join().charAt(0) === "u") {
-            finishedUserStory1.push(newArray.join() + "way")
-          } else {
-            finishedUserStory1.push(newArray.join())
-          }
-// recalling our completed array
-          } return finishedUserStory1.toString()
-        }
-// it works?!?!?!?!!?!!!!!! but it duplicates..... :(
+// intended to use arrayOfUserInput as the argument
+          
+          //check vowelArray at index zero
+          if(vowelsArray.includes(eachWord[0])) {
+            return eachWord + "way"
+          } 
 
       // ACTION ITEM: this return will be the output of your Pig Latin'd code 
 // ******** originally each word on line 70 ******
-      return userStory1(arrayOfUserInput)
+    //  return userStory1(arrayOfUserInput)
     })
 
     // NO MODIFICATION NEEDED: once the code has been modified it gets joined from an array back to a string
@@ -79,7 +55,7 @@ const App = () => {
   }
 
   // ACTION ITEM: this method restarts the game by setting the original state, when you are ready for your full user experience delete the test words in setUserInput and pass an empty string
-  const restartGame = () => {
+    const restartGame = () => {
     setUserInput("apple through queen squeal fry fluent")
     setInputTranslated("")
   }
